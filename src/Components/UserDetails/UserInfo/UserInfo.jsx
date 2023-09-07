@@ -1,64 +1,41 @@
-import React, { useState } from 'react'
-import Step1 from './Steps/Step1';
-import Step2 from './Steps/Step2';
-import Step3 from './Steps/Step3';
-import Step4 from './Steps/Step4';
-
+import React, { useState } from "react";
+import Step1 from "./Steps/Step1";
+import Step2 from "./Steps/Step2";
+import Step3 from "./Steps/Step3";
+import Step4 from "./Steps/Step4";
 
 export default function UserInfo() {
+  const [step, setStep] = useState(1);
 
+  const [userInfo, setUserInfo] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    country: "",
+    password: "",
+    sex: "",
+    dob: "",
+  });
 
-    const [step, setStep] = useState(1);
+  console.log(userInfo);
 
-    const [userInfo, setUserInfo] = useState(
-        {
-            firstname: "",
-            lastname: "",
-            email: '',
-            country: "",
-            password: "",
-            sex: "",
-            dob: "",
-        }
-    )
+  return (
+    <div>
+      <div>
+        {/*First step 1 */}
 
-    console.log(userInfo);
+        {step == 1 && <Step1 setStep={setStep} setUserInfo={setUserInfo} />}
+      </div>
+      <div>
+        {step === 2 && <Step2 setStep={setStep} setUserInfo={setUserInfo} />}
+      </div>
+      <div>
+        {step === 3 && <Step3 setStep={setStep} setUserInfo={setUserInfo} />}
+      </div>
 
-    return (
-
-        <div>
-
-            <div>
-                {/*First step 1 */}
-
-                {
-                    step == 1 &&
-                    <Step1 setStep={setStep} setUserInfo={setUserInfo} />
-                }
-
-
-            </div>
-            <div>
-                {
-                    step === 2 && <Step2 setStep={setStep} setUserInfo={setUserInfo} />
-                }
-            </div>
-            <div>
-                {
-                    step === 3 && <Step3 setStep={setStep} setUserInfo={setUserInfo}/>
-                }
-
-
-            </div>
-
-            <div>
-                {
-                    step === 4 && <Step4 setStep={setStep} setUserInfo={setUserInfo} />
-                }
-
-            </div>
-
-        </div>
-
-    )
+      <div>
+        {step === 4 && <Step4 setStep={setStep} setUserInfo={setUserInfo} />}
+      </div>
+    </div>
+  );
 }

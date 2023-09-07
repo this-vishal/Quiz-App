@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Step4({setUserInfo}) {
 
@@ -52,7 +53,8 @@ export default function Step4({setUserInfo}) {
                 We use information like the state you live in and your birthday to make sure Facet can treat you. Next, you'll create a patient profile and answer more questions about your symptoms.
             </p>
         </div>
-        <button onClick={()=>{}}>Continue Consultation</button>
+        <Link to={'/usersymdetails'}> <button onClick={()=>{}}>Continue Consultation</button></Link>
+       
     </div>
 </>
 

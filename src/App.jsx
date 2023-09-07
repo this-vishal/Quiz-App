@@ -6,6 +6,7 @@ import UserConserns from './Components/UserConcerns/UserConserns'
 import UserConsernsMore from './Components/UserConcernsMore/UserConsernsMore'
 import UserInfo from './Components/UserDetails/UserInfo/UserInfo'
 import { BrowserRouter, Route ,Routes } from 'react-router-dom'
+import UserSymDetails from './Components/UserSymDetails/UserSymDetails'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path='/userconcerns' element={ <UserConserns/>}/>
       <Route path='/userconcernsmore' element={ <UserConsernsMore/>}/>
       <Route path='/userinfo' element={ <UserInfo/>}/>
+      <Route path='/usersymdetails' element={ <UserSymDetails/>}/>
 
     </Routes>
     
